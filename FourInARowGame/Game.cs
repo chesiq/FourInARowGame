@@ -27,14 +27,10 @@ namespace FourInARowGame
 
         public void Restart()
         {
-            field = new short[,] { 
-                {0,0,0,0,0,0,0},
-                {0,0,0,0,0,0,0},
-                {0,0,0,0,0,0,0},
-                {0,0,0,0,0,0,0},
-                {0,0,0,0,0,0,0},
-                {0,0,0,0,0,0,0}
-            };
+            field = new short[rowCount, columnCount];
+            for (short row = 0; row < rowCount; row++)
+                for (short col = 0; col < columnCount; col++)
+                    field[row, col] = 0;
         }
 
         public bool MakeTurn(short player, short column)
