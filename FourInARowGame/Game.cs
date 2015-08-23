@@ -25,6 +25,9 @@ namespace FourInARowGame
             Restart();
         }
 
+        /// <summary>
+        /// Init field with zeros
+        /// </summary>
         public void Restart()
         {
             field = new short[rowCount, columnCount];
@@ -33,6 +36,15 @@ namespace FourInARowGame
                     field[row, col] = 0;
         }
 
+        /// <summary>
+        /// Method to make turn
+        /// </summary>
+        /// <param name="player">Player who made a turn</param>
+        /// <param name="column">Which column to add</param>
+        /// <returns>
+        /// True if turn is successcull
+        /// False otherwise
+        /// </returns>
         public bool MakeTurn(short player, short column)
         {
             for (short row = (short)(rowCount - 1); row >= 0; row--)
@@ -44,6 +56,12 @@ namespace FourInARowGame
             return false;
         }
 
+        /// <summary>
+        /// Checks if it is a winner on the board
+        /// </summary>
+        /// <returns>
+        /// True is winner exists
+        /// </returns>
         public bool CheckWinner()
         {
             //Check verticals
@@ -86,6 +104,12 @@ namespace FourInARowGame
             return false;
         }
 
+        /// <summary>
+        /// Checks for draw
+        /// </summary>
+        /// <returns>
+        /// True if its draw
+        /// </returns>
         public bool CheckDraw()
         {
             for (short row = 0; row < rowCount; row++)

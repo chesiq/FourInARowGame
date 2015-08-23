@@ -15,6 +15,12 @@ namespace FourInARowGame
             get { return new Rectangle(Location, new Size(Size, Size)); }
         }
 
+        /// <summary>
+        /// Checks if we clicked on cell rectangle
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <returns></returns>
         public bool IsClicked(int x, int y)
         {
             return Rect.Contains(x, y);

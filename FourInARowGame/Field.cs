@@ -29,12 +29,22 @@ namespace FourInARowGame
 
         }
 
+        /// <summary>
+        /// Restart button click event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void restart_Click(object sender, EventArgs e)
         {
             game.Restart();
             ClearField();
         }
 
+        /// <summary>
+        /// Panel initialization event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
             graphics = panel1.CreateGraphics();
@@ -44,6 +54,11 @@ namespace FourInARowGame
             UpdateFields();
         }
 
+        /// <summary>
+        /// Field mouse down event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void panel1_MouseDown(object sender, MouseEventArgs e)
         {
             if (endGame) return;
@@ -71,6 +86,9 @@ namespace FourInARowGame
             }
         }
 
+        /// <summary>
+        /// Draws cells for game and save cells to list
+        /// </summary>
         private void DrawGrid()
         {
             for (short x = 0; x < RowsCount; x++)
@@ -89,6 +107,9 @@ namespace FourInARowGame
             }
         }
 
+        /// <summary>
+        /// Updates label which player's turn is right now 
+        /// </summary>
         private void UpdateTurnLabel()
         {
             String template = "Player{0}'s turn";
@@ -97,6 +118,9 @@ namespace FourInARowGame
             UpdatePlayerColor();
         }
 
+        /// <summary>
+        /// Draws circles depends on array from Game class
+        /// </summary>
         private void UpdateFields()
         {
             int circleSize = Convert.ToInt32(CellSize * 0.75);
@@ -122,6 +146,9 @@ namespace FourInARowGame
             }
         }
 
+        /// <summary>
+        /// Clears field 
+        /// </summary>
         private void ClearField()
         {
             endGame = false;
@@ -131,6 +158,9 @@ namespace FourInARowGame
             DrawGrid();
         }
 
+        /// <summary>
+        /// Updates indicator current player's turn
+        /// </summary>
         private void UpdatePlayerColor()
         {
             switch (whichPlayer)
